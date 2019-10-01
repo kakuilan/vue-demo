@@ -13,6 +13,7 @@
       </h5>
     </p>
     <p v-if="seen">现在你看到我了</p>
+    <div v-html="htmlMsg"></div>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -47,6 +48,7 @@ export default {
   return {
       nowData:'页面加载于 ' + new Date().toLocaleString(),
       seen: false, //修改此值,以显示或隐藏
+      htmlMsg:'<h2>Vue教程</h2>'
     };
 }
 }
