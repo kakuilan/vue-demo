@@ -3,10 +3,14 @@
     <h1>{{ msg }}</h1>
     
     <p>
-      <h4>{{nowData}}</h4>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      <h5>
+        <span v-bind:title="nowData">
+          鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+      </h5>
     </p>
     <h3>Installed CLI Plugins</h3>
     <ul>
