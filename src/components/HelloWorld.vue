@@ -20,6 +20,14 @@
       v-bind:class 指令
     </div>
 
+    <!--JavaScript 表达式支持-->
+    <div>
+    {{1+2}}<br>
+    {{ ok ? 'YES' : 'NO' }}<br>
+    {{ nowData.split('').reverse().join('') }}
+    <span v-bind:id="'list-' + id">heheh</span>      
+    </div>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
