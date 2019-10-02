@@ -10,6 +10,8 @@
         <span v-bind:title="nowData">
           鼠标悬停几秒钟查看此处动态绑定的提示信息！
         </span>
+        <br>
+        <span>计算后反转的字符串：{{reversedNowData}}</span>
       </h5>
     </p>
     <p v-if="seen">现在你看到我了</p>
@@ -142,7 +144,15 @@ export default {
       },
       
     };
-}
+  },
+  // 计算属性
+  computed:{
+    // 计算属性的 getter
+    reversedNowData: function () {
+      // `this` 指向 vm 实例
+      return this.nowData.split('').reverse().join('')
+    },
+  },
 }
 </script>
 
