@@ -23,9 +23,12 @@
     <!--JavaScript 表达式支持-->
     <div>
     {{1+2}}<br>
-    {{ ok ? 'YES' : 'NO' }}<br>
+    {{ seen ? 'YES' : 'NO' }}<br>
     {{ nowData.split('').reverse().join('') }}
-    <span v-bind:id="'list-' + id">heheh</span>      
+    <span v-bind:id="'list-'">
+      <a v-bind:href="url">heheh</a>
+    </span>
+    <button v-on:click="clickEvent">点击事件</button>
     </div>
 
     <h3>Installed CLI Plugins</h3>
@@ -64,6 +67,10 @@ export default {
       seen: false, //修改此值,以显示或隐藏
       htmlMsg:'<h2>Vue教程</h2>',
       useCls: true,
+      url:'http://baidu.com',
+      clickEvent: function() {
+       console.log('click...');
+      },
     };
 }
 }
