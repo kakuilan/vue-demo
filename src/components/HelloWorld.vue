@@ -90,6 +90,9 @@
     <!-- v-bind:style设置内联样式 -->
     <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">设置内联样式</div>
 
+    <!-- 使用数组将多个样式对象应用到一个元素上 -->
+    <div v-bind:style="[baseStyles, overridingStyles]">多个样式对象</div>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -162,6 +165,13 @@ export default {
       activeClass: 'active',
       activeColor: 'green',
       fontSize: 30,
+      baseStyles: {
+        color: 'green',
+        fontSize: '30px'
+      },
+      overridingStyles: {
+        'font-weight': 'bold'
+      },
       
     };
   },
