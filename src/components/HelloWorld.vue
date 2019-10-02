@@ -99,6 +99,11 @@
       <span>这个按钮被点击了 {{ counter }} 次。</span>
     </p>
 
+    <p>
+      v-on调用自定义方法 
+      <button v-on:click="greet">Greet</button>
+    </p>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -136,6 +141,14 @@ export default {
     reverseInput:function() {
       this.inputMsg = this.inputMsg.split('').reverse().join('');
     },
+    greet: function (event) {
+      // `this` 在方法里指当前 Vue 实例
+      alert('Hello ' + this.name + '!')
+      // `event` 是原生 DOM 事件
+      if (event) {
+          alert(event.target.tagName)
+      }
+    },
   },
   // 过滤器
   filters:{
@@ -148,6 +161,7 @@ export default {
   },
   data:function() {
   return {
+      name:'Vue.js',
       nowData:'页面加载于 ' + new Date().toLocaleString(),
       seen: false, //修改此值,以显示或隐藏
       htmlMsg:'<h2>Vue教程</h2>',
