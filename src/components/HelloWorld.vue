@@ -31,8 +31,10 @@
     <button v-on:click="clickEvent">点击事件</button>
     </div>
     <p>
-      <span>{{inputMsg}}</span>
+      <!--过滤器使用管道符"|"指示,过滤器函数接受表达式的值作为第一个参数  -->
+      <span>{{inputMsg | capitalize }}</span>
       <input v-model="inputMsg">
+      <button v-on:click="reverseInput">翻转输入</button>
     </p>
 
     <h3>Installed CLI Plugins</h3>
@@ -65,6 +67,23 @@ export default {
   props: {
     msg: String
   },
+  methods:{
+    clickEvent: function() {
+       console.log('click...');
+      },
+    reverseInput:function() {
+      this.inputMsg = this.inputMsg.split('').reverse().join('');
+    },
+  },
+  // 过滤器
+  filters:{
+    // 首字母大写
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    },
+  },
   data:function() {
   return {
       nowData:'页面加载于 ' + new Date().toLocaleString(),
@@ -72,10 +91,9 @@ export default {
       htmlMsg:'<h2>Vue教程</h2>',
       useCls: true,
       url:'http://baidu.com',
-      clickEvent: function() {
-       console.log('click...');
-      },
-      inputMsg:'默认值',
+      
+      inputMsg:'default',
+      
     };
 }
 }
