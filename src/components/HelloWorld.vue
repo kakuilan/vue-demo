@@ -26,8 +26,9 @@
     <p class="static"
      v-bind:class="{ active: seen, 'text-danger': useCls }">
       这里是v-bind:class设置
+      <div v-bind:class="['errorClass' , true ? activeClass : '']">inner</div>
     </p>
-    
+
     <!--JavaScript 表达式支持-->
     <div>
     {{1+2}}<br>
@@ -155,6 +156,7 @@ export default {
       },
       kilometers : 0,
       meters:0,
+      activeClass: 'active',
       
     };
   },
