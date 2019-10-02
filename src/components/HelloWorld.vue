@@ -74,6 +74,11 @@
       </li>
     </ul>    
 
+    <!-- watch监听属性 -->
+    <p>
+    千米 : <input type = "text" v-model = "kilometers">
+    米 : <input type = "text" v-model = "meters">      
+    </p>    
 
     <h3>Installed CLI Plugins</h3>
     <ul>
@@ -142,6 +147,8 @@ export default {
         url: 'http://www.runoob.com',
         slogan: '学的不仅是技术，更是梦想！'
       },
+      kilometers : 0,
+      meters:0,
       
     };
   },
@@ -152,6 +159,19 @@ export default {
       // `this` 指向 vm 实例
       return this.nowData.split('').reverse().join('')
     },
+  },
+  // 监听属性
+  watch : {
+    kilometers:function(newVal, oldVal) {
+        console.log('kilometers:', newVal, oldVal);
+        this.kilometers = newVal;
+        this.meters = this.kilometers * 1000
+    },
+    meters : function (newVal, oldVal) {
+      console.log('meters:', newVal, oldVal);
+        this.kilometers = newVal/ 1000;
+        this.meters = newVal;
+    }
   },
 }
 </script>
