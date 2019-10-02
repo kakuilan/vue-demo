@@ -123,6 +123,15 @@
       <a v-on:click.once="doThis">E</a>
     </p>
 
+    <p>
+      v-on的按键修饰符<br/>
+      <input v-on:keyup.13="doThis">
+      <!-- 同上 -->
+      <input v-on:keyup.enter="doThis">
+      <!-- 缩写语法 -->
+      <input @keyup.enter="doThis">
+    </p>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
