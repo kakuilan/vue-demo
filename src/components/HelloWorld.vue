@@ -37,6 +37,27 @@
       <button v-on:click="reverseInput">翻转输入</button>
     </p>
 
+    <!-- v-else-if条件判断 -->
+    <div v-if="type === 'A'">
+      A
+    </div>
+    <div v-else-if="type === 'B'">
+      B
+    </div>
+    <div v-else-if="type === 'C'">
+      C
+    </div>
+    <div v-else>
+      Not A/B/C
+    </div>
+
+    <!-- v-for 循环,key必须 -->
+  <ol>
+    <li v-for="(site,idx) in sites" :key='idx'>
+      {{ site.name }}
+    </li>
+  </ol>    
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -93,6 +114,12 @@ export default {
       url:'http://baidu.com',
       
       inputMsg:'default',
+      type: 'C',
+      sites: [
+      { name: 'Baidu' },
+      { name: 'Google' },
+      { name: 'Taobao' }
+    ],
       
     };
 }
