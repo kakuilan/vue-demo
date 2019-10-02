@@ -65,6 +65,13 @@
       </li>
     </ul>
 
+    <!-- v-for 迭代整数 -->
+    <ul>
+      <li v-for="n in 10" :key='n'>
+      {{ n }}
+      </li>
+    </ul>    
+
 
     <h3>Installed CLI Plugins</h3>
     <ul>
