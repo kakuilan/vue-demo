@@ -42,6 +42,7 @@
     <p>
       <!--过滤器使用管道符"|"指示,过滤器函数接受表达式的值作为第一个参数  -->
       <span>{{inputMsg | capitalize }}</span>
+      v-model双向数据绑定<br/>
       <input v-model="inputMsg">
       <button v-on:click="reverseInput">翻转输入</button>
     </p>
