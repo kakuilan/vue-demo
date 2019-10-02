@@ -30,6 +30,10 @@
     </span>
     <button v-on:click="clickEvent">点击事件</button>
     </div>
+    <p>
+      <span>{{inputMsg}}</span>
+      <input v-model="inputMsg">
+    </p>
 
     <h3>Installed CLI Plugins</h3>
     <ul>
@@ -71,6 +75,7 @@ export default {
       clickEvent: function() {
        console.log('click...');
       },
+      inputMsg:'默认值',
     };
 }
 }
