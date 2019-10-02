@@ -93,6 +93,12 @@
     <!-- 使用数组将多个样式对象应用到一个元素上 -->
     <div v-bind:style="[baseStyles, overridingStyles]">多个样式对象</div>
 
+    <!-- 简单v-on:click事件 -->
+    <p>
+      <button v-on:click="counter += 1">增加 1</button>
+      <span>这个按钮被点击了 {{ counter }} 次。</span>
+    </p>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -172,6 +178,7 @@ export default {
       overridingStyles: {
         'font-weight': 'bold'
       },
+      counter: 0,
       
     };
   },
