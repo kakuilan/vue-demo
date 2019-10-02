@@ -52,11 +52,19 @@
     </div>
 
     <!-- v-for 循环,key必须 -->
-  <ol>
-    <li v-for="(site,idx) in sites" :key='idx'>
-      {{ site.name }}
-    </li>
-  </ol>    
+    <ol>
+      <li v-for="(site,idx) in sites" :key='idx'>
+        {{ site.name }}
+      </li>
+    </ol>    
+
+    <!-- v-for 迭代对象 -->
+    <ul>
+      <li v-for="(value, key, index) in object" :key='index'>
+      {{ index }}. {{ key }} : {{ value }}
+      </li>
+    </ul>
+
 
     <h3>Installed CLI Plugins</h3>
     <ul>
@@ -116,10 +124,15 @@ export default {
       inputMsg:'default',
       type: 'C',
       sites: [
-      { name: 'Baidu' },
-      { name: 'Google' },
-      { name: 'Taobao' }
-    ],
+        { name: 'Baidu' },
+        { name: 'Google' },
+        { name: 'Taobao' }
+      ],
+      object: {
+        name: '菜鸟教程',
+        url: 'http://www.runoob.com',
+        slogan: '学的不仅是技术，更是梦想！'
+      },
       
     };
 }
