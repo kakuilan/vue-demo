@@ -22,6 +22,12 @@
       v-bind:class 指令
     </div>
 
+    <!-- v-bind:class设置一个或多个class样式 -->
+    <p class="static"
+     v-bind:class="{ active: seen, 'text-danger': useCls }">
+      这里是v-bind:class设置
+    </p>
+    
     <!--JavaScript 表达式支持-->
     <div>
     {{1+2}}<br>
