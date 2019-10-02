@@ -85,7 +85,10 @@
     <p>
     千米 : <input type = "text" v-model = "kilometers">
     米 : <input type = "text" v-model = "meters">      
-    </p>    
+    </p>
+
+    <!-- v-bind:style设置内联样式 -->
+    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">设置内联样式</div>
 
     <h3>Installed CLI Plugins</h3>
     <ul>
@@ -157,6 +160,8 @@ export default {
       kilometers : 0,
       meters:0,
       activeClass: 'active',
+      activeColor: 'green',
+      fontSize: 30,
       
     };
   },
