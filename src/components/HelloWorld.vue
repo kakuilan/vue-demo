@@ -174,6 +174,13 @@
     <!-- 自定义组件 -->
     <custom message="hello!"></custom>
 
+    <!-- v-bind绑定组件属性 -->
+    <p>
+      <input v-model="parentMsg">
+      <br>
+      <custom v-bind:message="parentMsg"></custom>
+    </p>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -283,6 +290,7 @@ export default {
       checkedNames: [],
       picked : 'Runoob',
       selected: '' ,
+      parentMsg: '父组件内容',
       
     };
   },
