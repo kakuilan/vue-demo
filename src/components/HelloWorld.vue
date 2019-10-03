@@ -150,6 +150,17 @@
       <span>选择的值为: {{ checkedNames }}</span>
     </div>
 
+    <!-- v-model绑定单选框 -->
+    <p>
+      <input type="radio" id="runoob2" value="Runoob" v-model="picked">
+      <label for="runoob2">Runoob</label>
+      <br>
+      <input type="radio" id="google2" value="Google" v-model="picked">
+      <label for="google2">Google</label>
+      <br>
+      <span>选中值为: {{ picked }}</span>
+    </p>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -247,6 +258,7 @@ export default {
       counter: 0,
       checked : false,
       checkedNames: [],
+      picked : 'Runoob',
       
     };
   },
