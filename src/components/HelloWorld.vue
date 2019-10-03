@@ -171,6 +171,9 @@
       <span>选择的网站是: {{selected}}</span>
     </p>
 
+    <!-- 自定义组件 -->
+    <custom></custom>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -196,10 +199,17 @@
 </template>
 
 <script>
+var Child = {
+  template: '<h4>自定义组件!</h4>'
+}
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: {
+    custom: Child,
   },
   methods:{
     clickEvent: function() {
