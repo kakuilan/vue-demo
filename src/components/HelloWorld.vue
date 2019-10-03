@@ -161,6 +161,16 @@
       <span>选中值为: {{ picked }}</span>
     </p>
 
+    <!-- 绑定select列表 -->
+    <p>
+      <select v-model="selected" name="fruit">
+        <option value="">选择一个网站</option>
+        <option value="www.runoob.com">Runoob</option>
+        <option value="www.google.com">Google</option>
+      </select>
+      <span>选择的网站是: {{selected}}</span>
+    </p>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -259,6 +269,7 @@ export default {
       checked : false,
       checkedNames: [],
       picked : 'Runoob',
+      selected: '' ,
       
     };
   },
