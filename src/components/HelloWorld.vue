@@ -172,7 +172,7 @@
     </p>
 
     <!-- 自定义组件 -->
-    <custom></custom>
+    <custom message="hello!"></custom>
 
     <h3>Installed CLI Plugins</h3>
     <ul>
@@ -200,7 +200,10 @@
 
 <script>
 var Child = {
-  template: '<h4>自定义组件!</h4>'
+  // 声明 props
+  props: ['message'],
+
+  template: '<h4>自定义组件!{{ message }}</h4>'
 }
 
 export default {
