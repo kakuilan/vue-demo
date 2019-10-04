@@ -194,6 +194,12 @@ class="static"
       <ButtonCounter v-on:increment="incrementTotal">{{counter}}</ButtonCounter>
     </p>
 
+    <!-- 自定义指令 -->
+    <p>
+      <span>自定义指令,载入后input 元素自动获取焦点</span>
+      <input v-focus>
+    </p>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
