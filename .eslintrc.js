@@ -28,6 +28,7 @@ module.exports = {
             }
         }],
         "vue/name-property-casing": ["error", "PascalCase"],
+        'vue/no-parsing-error': [2, { "x-invalid-end-tag": false }],
         'accessor-pairs': 2, // 强制 getter 和 setter 在对象中成对出现
         'arrow-spacing': [2, {
             'before': true,
