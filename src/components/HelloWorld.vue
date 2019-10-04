@@ -187,6 +187,13 @@ class="static"
       <custom2 propC="必须的属性propC"></custom2>
     </p>
 
+    <!-- 组件的自定义事件 -->
+    <p>
+      组件的自定义事件:<span>{{total}}</span><br/>
+      <ButtonCounter v-on:increment="incrementTotal">{{counter}}</ButtonCounter>
+      <ButtonCounter v-on:increment="incrementTotal">{{counter}}</ButtonCounter>
+    </p>
+
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -212,6 +219,8 @@ class="static"
 </template>
 
 <script>
+import ButtonCounter from './ButtonCounter'
+
 var Child = {
   // 声明 props
   props: ['message'],
@@ -261,7 +270,8 @@ export default {
   },
   components: {
     custom: Child,
-    custom2: Child2
+    custom2: Child2,
+    ButtonCounter: ButtonCounter
   },
   methods: {
     clickEvent: function() {
@@ -283,6 +293,9 @@ export default {
     },
     doThat: function() {
       console.log('doThat');
+    },
+    incrementTotal: function() {
+      this.total += 1
     }
   },
   // 过滤器
@@ -332,7 +345,8 @@ export default {
       checkedNames: [],
       picked: 'Runoob',
       selected: '',
-      parentMsg: '父组件内容'
+      parentMsg: '父组件内容',
+      total: 0
 
     };
   },
